@@ -10,5 +10,10 @@ Final project for LIS 545: Data Curation during the Winter 2022 Quarter. It cont
 ## Data Dictionary
 ## Metadata
 ## Rights
+These curated datasets are freely available for use and reuse by anyone.
+Each of the datasets were modified from the three open data platforms below. 
+- Street_Tree_List from San Francisco, CA downloaded from https://data.sfgov.org/City-Infrastructure/Street-Tree-List/tkzw-k3nq
+- Urban_Forestry_Street_Trees from Washington, DC downloaded from https://opendata.dc.gov/datasets/DCGIS::urban-forestry-street-trees/about
+- Tree_Inventory from Austin, Texas downloaded from https://data.austintexas.gov/Locations-and-Maps/Tree-Inventory/wrik-xasw
 ## Contact
 hoye@uw.edu
