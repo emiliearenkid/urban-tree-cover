@@ -7,6 +7,36 @@ Final project for LIS 545: Data Curation during the Winter 2022 Quarter. It cont
 - [Rights](https://github.com/emiliearenkid/urban-tree-cover/edit/main/README.md#rights)
 - [Contact](https://github.com/emiliearenkid/urban-tree-cover/edit/main/README.md#contact)
 ## Edits and Standardization
+Changes made to Datasets: 
+Version 1 of all datasets is transforming them to Excel sheets for easier modification.
+Version 1.1 of all datasets includes the following edits to make them compatible for analysis.
+- Washington D.C.
+    - Renamed FACILITYID column to TREEID.
+    - Delete OBJECTID column because it is only used as an internal number (meaningless without the internal context).
+    - Added LOCATION column to combine X and Y values.
+    - Changed X column to LONGITUDE and Y column to LATITUDE.
+    - Removed the Cicada_Survey, Shape, Disease, Pests, Ownership, OneYearPhoto, SpecialPhoto, PhotoRemarks, Elevation, Sign, TRRS, Warranty, Created_User, Created_Date, GIS_ID, GlobalID, Creator, Created, Editor, Edited, TBox_Stat, Sidewalk, Curb, Wires, TBox_Width, TBox_Length, Ward, Condition, ConditioDT, EditedBy, Last_Edited_User, and RetireDDT columns.
+    - Moved the FAM_NAME and GENUS_Name columns next to each other and moved the LAST_EDITED_DATE to the last column.
+    - Removed the MBG_WIDTH, MBG_LENGTH, MBG_ORIENTATION, MAX_CROWN_HEIGHT, MAX_MEAN, MIN_CROWN_BASE, DTM_MEAN, PERIM, and CROWN_AREA columns.
+    - Removed the TREE_NOTES and DATE_PLANT columns. 
+    - Added a GEOJSON_CORDINATES column, like the Austin, TX dataset to have a field with a GeoJSON Point data type for ease with importing into GIS.
+    - Removed the FAM_NM and GENUS_NM fields.
+    - Changes the SCI_NM and CMMN_NM fields to SCIENTIFIC_NAME and COMMON_NAME, respectfully.
+- San Francisco, CA
+    - Capitalized all columns.
+    - Added a GEOJSON_CORDINATES column, like the Austin, TX dataset to have a field with a GeoJSON Point data type for ease with importing into GIS programs.
+    - Removed the FIREPREVENTIONDISTRICT, POLICEDISTRICT, SUPERVISORDISTRICT, ZIPCODES, NEIGHBORHOODS(OLD), AND ANALYSISNEIGHBORHOODS fields.
+    - Removed the PLOTSIZE, PERMITNOTES, XCOORD, and YCOORD fields.
+    - Removed the QLEGALSTATE, SITEORDER, QSITEINFO, PLANTTYPE, QCARETAKER, QCAREASSISTANT, and PLANTDATE fields.
+    - Separate the "SPECIES" field into SCIENTIFIC_NAME, COMMON_NAME, and COMMON_NAME2.
+- Austin, TX
+    - Separated Geometry into X and Y columns.
+    - Renamed New Georeferenced Column to GEOJSON_COORDINATES.
+    - Rmoved the GEOMETRY column because it is a field output unique to GIS that has no use for my users.
+    - Renamed the X and Y columns to SPECIFIC_LONGITUDE and SPECIFIC_LATITUDE, respectively.
+    - Renamed SPECIES to COMMON_NAME.
+    - Renamed DIAMETER to DBH.
+Version 1.2 of all datasets is turning them back into csvs for upload to GitHub.
 ## Data Dictionary
 **WASHINGTON D.C.**
 | Variable | Label | Type | Allowed Values | Description |
@@ -14,7 +44,7 @@ Final project for LIS 545: Data Curation during the Winter 2022 Quarter. It cont
 | Latitude | LATITUDE | double | positive or negative number | The estimated latitutde of the tree's location. |
 | Longitude | LONGITUDE | double | positive or negative number | The estimated longitude of the tree's location. |
 | Coordinates | LOCATION | Coordinates | latitude, longitude pair | The approximate coordinates of the tree's location. |
-| GIS Coordinates | GEOJSON_COORDINATES | GeoJSON | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
+| GIS Coordinates | GEOJSON_COORDINATES | GeoJSON Point | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
 | Unique Identifier | TREEID | int | Unique positive whole numbers | Unique tree identifier. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
 | Address | VICINITY | string | N/A | Address in immediate vicinity of the tree. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
 | Scientific Name | SCIENTIFIC_NAME | string | N/A | Scientific name. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
@@ -34,7 +64,7 @@ Final project for LIS 545: Data Curation during the Winter 2022 Quarter. It cont
 | Latitude | LATITUDE | double | positive or negative number | WGS84 format latitude coordinates. |
 | Longitude | LONGITUDE | double | positive or negative number | WGS84 format longitude coordinates. |
 | Coordinates | LOCATION | Coordinates | latitude, longitude pair | Location formatted for mapping. |
-| GIS Coordinates | GEOJSON_COORDINATES | GEOJSON | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
+| GIS Coordinates | GEOJSON_COORDINATES | GEOJSON Point | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
 
 **AUSTIN, TX**
 | Variable | Label | Type | Allowed Values | Description |
@@ -45,7 +75,7 @@ Final project for LIS 545: Data Curation during the Winter 2022 Quarter. It cont
 | Diameter Breast Height | DBH | float | Any positive or negative float | Diameter at breast height. Commonly measured at 4.5 ft from the soil surface. |
 | Latitude | LATITUDE | double | positive or negative number | The estimated latitude of the tree's location. |
 | Longitude | LONGITUDE | double | positive or negative number | The estimated longitude of the tree's location. |
-| GIS Coordinates | GEOJSON_COORDINATES | GEOJSON | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
+| GIS Coordinates | GEOJSON_COORDINATES | GEOJSON Point | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
 ## Metadata
 **WASHINGTON D.C.**
 | Attribute | Value         |
