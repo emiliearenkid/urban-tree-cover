@@ -36,7 +36,7 @@ Version 1.1 of all datasets includes the following edits to make them compatible
     - Renamed the X and Y columns to SPECIFIC_LONGITUDE and SPECIFIC_LATITUDE, respectively.
     - Renamed SPECIES to COMMON_NAME.
     - Renamed DIAMETER to DBH.
-Version 1.2 of all datasets is turning them back into csvs for upload to GitHub.
+Version 2.0 of all datasets is turning them back into csvs for upload to GitHub.
 ## Data Dictionary
 **WASHINGTON D.C.**
 | Variable | Label | Type | Allowed Values | Description |
@@ -96,7 +96,7 @@ Version 1.2 of all datasets is turning them back into csvs for upload to GitHub.
 | landingPage | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
 | accessURL | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
 | format | CSV |
-| downloadURL | TO BE ADDED |
+| downloadURL | [https://github.com/emiliearenkid/urban-tree-cover/raw/main/Urban_Forestry_Street_Trees_Washington_DC_v2.0.csv](https://github.com/emiliearenkid/urban-tree-cover/raw/main/Urban_Forestry_Street_Trees_Washington_DC_v2.0.csv) |
 | mediaType | CSV |
 
 **SAN FRANCISCO, CA**
@@ -118,7 +118,7 @@ Version 1.2 of all datasets is turning them back into csvs for upload to GitHub.
 | landingPage | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
 | accessURL | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
 | format | CSV |
-| downloadURL | TO BE ADDED |
+| downloadURL | [https://github.com/emiliearenkid/urban-tree-cover/raw/main/Street_Tree_List_San_Francisco_CA_v2.0.csv](https://github.com/emiliearenkid/urban-tree-cover/raw/main/Street_Tree_List_San_Francisco_CA_v2.0.csv) |
 | mediaType | CSV |
 
 **AUSTIN, TX**
@@ -140,7 +140,7 @@ Version 1.2 of all datasets is turning them back into csvs for upload to GitHub.
 | landingPage | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
 | accessURL | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
 | format | CSV |
-| downloadURL | TO BE ADDED |
+| downloadURL | [https://github.com/emiliearenkid/urban-tree-cover/raw/main/Tree_Inventory_Austin_TX_v2.0.csv](https://github.com/emiliearenkid/urban-tree-cover/raw/main/Tree_Inventory_Austin_TX_v2.0.csv) |
 | mediaType | CSV |
 ## Rights
 These curated datasets are freely available for use and reuse by anyone.
