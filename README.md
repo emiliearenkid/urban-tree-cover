@@ -10,18 +10,6 @@ Final project for LIS 545: Data Curation during the Winter 2022 Quarter. It cont
 Changes made to Datasets: 
 Version 1 of all datasets is transforming them to Excel sheets for easier modification.
 Version 1.1 of all datasets includes the following edits to make them compatible for analysis.
-- Washington D.C.
-    - Renamed FACILITYID column to TREEID.
-    - Delete OBJECTID column because it is only used as an internal number (meaningless without the internal context).
-    - Added LOCATION column to combine X and Y values.
-    - Changed X column to LONGITUDE and Y column to LATITUDE.
-    - Removed the Cicada_Survey, Shape, Disease, Pests, Ownership, OneYearPhoto, SpecialPhoto, PhotoRemarks, Elevation, Sign, TRRS, Warranty, Created_User, Created_Date, GIS_ID, GlobalID, Creator, Created, Editor, Edited, TBox_Stat, Sidewalk, Curb, Wires, TBox_Width, TBox_Length, Ward, Condition, ConditioDT, EditedBy, Last_Edited_User, and RetireDDT columns.
-    - Moved the FAM_NAME and GENUS_Name columns next to each other and moved the LAST_EDITED_DATE to the last column.
-    - Removed the MBG_WIDTH, MBG_LENGTH, MBG_ORIENTATION, MAX_CROWN_HEIGHT, MAX_MEAN, MIN_CROWN_BASE, DTM_MEAN, PERIM, and CROWN_AREA columns.
-    - Removed the TREE_NOTES and DATE_PLANT columns. 
-    - Added a GEOJSON_CORDINATES column, like the Austin, TX dataset to have a field with a GeoJSON Point data type for ease with importing into GIS.
-    - Removed the FAM_NM and GENUS_NM fields.
-    - Changes the SCI_NM and CMMN_NM fields to SCIENTIFIC_NAME and COMMON_NAME, respectfully.
 - San Francisco, CA
     - Capitalized all columns.
     - Added a GEOJSON_CORDINATES column, like the Austin, TX dataset to have a field with a GeoJSON Point data type for ease with importing into GIS programs.
@@ -36,22 +24,20 @@ Version 1.1 of all datasets includes the following edits to make them compatible
     - Renamed the X and Y columns to SPECIFIC_LONGITUDE and SPECIFIC_LATITUDE, respectively.
     - Renamed SPECIES to COMMON_NAME.
     - Renamed DIAMETER to DBH.
+- Washington D.C.
+    - Renamed FACILITYID column to TREEID.
+    - Delete OBJECTID column because it is only used as an internal number (meaningless without the internal context).
+    - Added LOCATION column to combine X and Y values.
+    - Changed X column to LONGITUDE and Y column to LATITUDE.
+    - Removed the Cicada_Survey, Shape, Disease, Pests, Ownership, OneYearPhoto, SpecialPhoto, PhotoRemarks, Elevation, Sign, TRRS, Warranty, Created_User, Created_Date, GIS_ID, GlobalID, Creator, Created, Editor, Edited, TBox_Stat, Sidewalk, Curb, Wires, TBox_Width, TBox_Length, Ward, Condition, ConditioDT, EditedBy, Last_Edited_User, and RetireDDT columns.
+    - Moved the FAM_NAME and GENUS_Name columns next to each other and moved the LAST_EDITED_DATE to the last column.
+    - Removed the MBG_WIDTH, MBG_LENGTH, MBG_ORIENTATION, MAX_CROWN_HEIGHT, MAX_MEAN, MIN_CROWN_BASE, DTM_MEAN, PERIM, and CROWN_AREA columns.
+    - Removed the TREE_NOTES and DATE_PLANT columns. 
+    - Added a GEOJSON_CORDINATES column, like the Austin, TX dataset to have a field with a GeoJSON Point data type for ease with importing into GIS.
+    - Removed the FAM_NM and GENUS_NM fields.
+    - Changes the SCI_NM and CMMN_NM fields to SCIENTIFIC_NAME and COMMON_NAME, respectfully.
 Version 2.0 of all datasets is turning them back into csvs for upload to GitHub.
 ## Data Dictionary
-**WASHINGTON D.C.**
-| Variable | Label | Type | Allowed Values | Description |
-|----------------|-----------|-----|-------------------------------|-------------------------------------------|
-| Latitude | LATITUDE | double | positive or negative number | The estimated latitutde of the tree's location. |
-| Longitude | LONGITUDE | double | positive or negative number | The estimated longitude of the tree's location. |
-| Coordinates | LOCATION | Coordinates | latitude, longitude pair | The approximate coordinates of the tree's location. |
-| GIS Coordinates | GEOJSON_COORDINATES | GeoJSON Point | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
-| Unique Identifier | TREEID | int | Unique positive whole numbers | Unique tree identifier. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
-| Address | VICINITY | string | N/A | Address in immediate vicinity of the tree. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
-| Scientific Name | SCIENTIFIC_NAME | string | N/A | Scientific name. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
-| Common Tree Name | COMMON_NAME | string | N/A | Common name. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
-| Diameter Breast Height | DBH | float | N/A | Diameter at breast height. Commonly measured at 4.5 ft from the soil surface. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
-| Last Edited | LAST_EDITED_DATE | date | N/A | Last time this tree's data was updated. |
-
 **SAN FRANCISCO, CA**
 | Variable | Label | Type | Allowed Values | Description |
 |----------------|-----------|-----|-------------------------------|-------------------------------------------|
@@ -76,29 +62,21 @@ Version 2.0 of all datasets is turning them back into csvs for upload to GitHub.
 | Latitude | LATITUDE | double | positive or negative number | The estimated latitude of the tree's location. |
 | Longitude | LONGITUDE | double | positive or negative number | The estimated longitude of the tree's location. |
 | GIS Coordinates | GEOJSON_COORDINATES | GEOJSON Point | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
-## Metadata
-**WASHINGTON D.C.**
-| Attribute | Value         |
-|-------------------|---------------|
-| conformsTo | [https://project-open-data.cio.gov/v1.1/schema](https://project-open-data.cio.gov/v1.1/schema) |
-| title | Urban Forestry Washington D.C. Street Trees |
-| description | This dataset contains trees and tree locations managed by the Urban Forestry Administration (UFA) in the District of Columbia. The dataset contains locations and attributes of Trees created as part of Department of Transportation (DDOT) Street Spatial Database (SSD). |
-| keyword | "trees", "urban tree cover", "urban canopy", "tree canopy", "street trees", "city trees" |
-| modified | 2023-03-06 |
-| publisher | Emilie Hoy |
-| fn | Emilie Hoy |
-| hasEmail | hoye@uw.edu |
-| accessLevel | public |
-| describedBy | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
-| describedByType | .md |
-| language | en-US |
-| references | [https://opendata.dc.gov/datasets/DCGIS::urban-forestry-street-trees/about](https://opendata.dc.gov/datasets/DCGIS::urban-forestry-street-trees/about) |
-| landingPage | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
-| accessURL | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
-| format | CSV |
-| downloadURL | [https://github.com/emiliearenkid/urban-tree-cover/raw/main/Urban_Forestry_Street_Trees_Washington_DC_v2.0.csv](https://github.com/emiliearenkid/urban-tree-cover/raw/main/Urban_Forestry_Street_Trees_Washington_DC_v2.0.csv) |
-| mediaType | CSV |
 
+**WASHINGTON D.C.**
+| Variable | Label | Type | Allowed Values | Description |
+|----------------|-----------|-----|-------------------------------|-------------------------------------------|
+| Latitude | LATITUDE | double | positive or negative number | The estimated latitutde of the tree's location. |
+| Longitude | LONGITUDE | double | positive or negative number | The estimated longitude of the tree's location. |
+| Coordinates | LOCATION | Coordinates | latitude, longitude pair | The approximate coordinates of the tree's location. |
+| GIS Coordinates | GEOJSON_COORDINATES | GeoJSON Point | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
+| Unique Identifier | TREEID | int | Unique positive whole numbers | Unique tree identifier. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
+| Address | VICINITY | string | N/A | Address in immediate vicinity of the tree. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
+| Scientific Name | SCIENTIFIC_NAME | string | N/A | Scientific name. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
+| Common Tree Name | COMMON_NAME | string | N/A | Common name. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
+| Diameter Breast Height | DBH | float | N/A | Diameter at breast height. Commonly measured at 4.5 ft from the soil surface. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
+| Last Edited | LAST_EDITED_DATE | date | N/A | Last time this tree's data was updated. |
+## Metadata
 **SAN FRANCISCO, CA**
 | Attribute | Value         |
 |-------------------|---------------|
@@ -141,6 +119,28 @@ Version 2.0 of all datasets is turning them back into csvs for upload to GitHub.
 | accessURL | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
 | format | CSV |
 | downloadURL | [https://github.com/emiliearenkid/urban-tree-cover/raw/main/Tree_Inventory_Austin_TX_v2.0.csv](https://github.com/emiliearenkid/urban-tree-cover/raw/main/Tree_Inventory_Austin_TX_v2.0.csv) |
+| mediaType | CSV |
+
+**WASHINGTON D.C.**
+| Attribute | Value         |
+|-------------------|---------------|
+| conformsTo | [https://project-open-data.cio.gov/v1.1/schema](https://project-open-data.cio.gov/v1.1/schema) |
+| title | Urban Forestry Washington D.C. Street Trees |
+| description | This dataset contains trees and tree locations managed by the Urban Forestry Administration (UFA) in the District of Columbia. The dataset contains locations and attributes of Trees created as part of Department of Transportation (DDOT) Street Spatial Database (SSD). |
+| keyword | "trees", "urban tree cover", "urban canopy", "tree canopy", "street trees", "city trees" |
+| modified | 2023-03-06 |
+| publisher | Emilie Hoy |
+| fn | Emilie Hoy |
+| hasEmail | hoye@uw.edu |
+| accessLevel | public |
+| describedBy | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
+| describedByType | .md |
+| language | en-US |
+| references | [https://opendata.dc.gov/datasets/DCGIS::urban-forestry-street-trees/about](https://opendata.dc.gov/datasets/DCGIS::urban-forestry-street-trees/about) |
+| landingPage | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
+| accessURL | [https://github.com/emiliearenkid/urban-tree-cover](https://github.com/emiliearenkid/urban-tree-cover) |
+| format | CSV |
+| downloadURL | [https://github.com/emiliearenkid/urban-tree-cover/raw/main/Urban_Forestry_Street_Trees_Washington_DC_v2.0.csv](https://github.com/emiliearenkid/urban-tree-cover/raw/main/Urban_Forestry_Street_Trees_Washington_DC_v2.0.csv) |
 | mediaType | CSV |
 ## Rights
 These curated datasets are freely available for use and reuse by anyone.
