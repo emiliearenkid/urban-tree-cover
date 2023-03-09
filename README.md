@@ -1,5 +1,5 @@
 # README.md
-Final project for LIS 545: Data Curation during the Winter 2022 Quarter. It contains three different datasets from U.S. City's Open Data platforms.
+Final project for LIS 545: Data Curation during the Winter 2022 Quarter. It contains three different datasets from U.S. City's Open Data platforms. Each dataset uses the original name separated by underscores with the city it came from appended to the end.
 ## Table of Contents
 - [Edits and Standardization](https://github.com/emiliearenkid/urban-tree-cover/edit/main/README.md#edits-and-standardization)
 - [Data Dictionary](https://github.com/emiliearenkid/urban-tree-cover/edit/main/README.md#data-dictionary)
