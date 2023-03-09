@@ -8,6 +8,44 @@ Final project for LIS 545: Data Curation during the Winter 2022 Quarter. It cont
 - [Contact](https://github.com/emiliearenkid/urban-tree-cover/edit/main/README.md#contact)
 ## Edits and Standardization
 ## Data Dictionary
+**WASHINGTON D.C.**
+| Variable | Label | Type | Allowed Values | Description |
+|----------------|-----------|-----|-------------------------------|-------------------------------------------|
+| Latitude | LATITUDE | double | positive or negative number | The estimated latitutde of the tree's location. |
+| Longitude | LONGITUDE | double | positive or negative number | The estimated longitude of the tree's location. |
+| Coordinates | LOCATION | Coordinates | latitude, longitude pair | The approximate coordinates of the tree's location. |
+| GIS Coordinates | GEOJSON_COORDINATES | GeoJSON | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
+| Unique Identifier | TREEID | int | Unique positive whole numbers | Unique tree identifier. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
+| Address | VICINITY | string | N/A | Address in immediate vicinity of the tree. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
+| Scientific Name | SCIENTIFIC_NAME | string | N/A | Scientific name. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
+| Common Tree Name | COMMON_NAME | string | N/A | Common name. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
+| Diameter Breast Height | DBH | float | N/A | Diameter at breast height. Commonly measured at 4.5 ft from the soil surface. Sourced from District of Columbia, Department of Transportation, Urban Forestry Administration. |
+| Last Edited | LAST_EDITED_DATE | date | N/A | Last time this tree's data was updated. |
+
+**SAN FRANCISCO, CA**
+| Variable | Label | Type | Allowed Values | Description |
+|----------------|-----------|-----|-------------------------------|-------------------------------------------|
+| Unique Identifier | TREEID | int | Unique positive whole numbers | Unique ID of tree. |
+| Scientific Name | SCIENTIFIC_NAME | string | N/A | The scientific name of the tree. |
+| Common Name | COMMON_NAME | string | N/A | The common name of the tree. |
+| Common Name Extended | COMMON_NAME2 | string | N/A | Alternate common names or specific strains of a well known tree. |
+| Address | LOCATION | string | N/A | Address the tree is located at. |
+| Diameter Breast Height | DBH | float | Any positive or negative float | Diameter at breast height. Commonly measured at 4.5 ft from the soil surface. |
+| Latitude | LATITUDE | double | positive or negative number | WGS84 format latitude coordinates. |
+| Longitude | LONGITUDE | double | positive or negative number | WGS84 format longitude coordinates. |
+| Coordinates | LOCATION | Coordinates | latitude, longitude pair | Location formatted for mapping. |
+| GIS Coordinates | GEOJSON_COORDINATES | GEOJSON | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
+
+**AUSTIN, TX**
+| Variable | Label | Type | Allowed Values | Description |
+|----------------|-----------|-----|-------------------------------|-------------------------------------------|
+| GIS Longitude | SPECIFIC_LONGITUDE | double | positive or negative number | The estimated longitude of the tree's location. Retrieved from GIS map. |
+| GIS Latitude | SPECIFIC_LATITUDE | double | positive or negative number | The estimated latitutde of the tree's location. Retrieved from GIS map. |
+| Common Name | COMMON_NAME | string | N/A | The common name of the tree. |
+| Diameter Breast Height | DBH | float | Any positive or negative float | Diameter at breast height. Commonly measured at 4.5 ft from the soil surface. |
+| Latitude | LATITUDE | double | positive or negative number | The estimated latitude of the tree's location. |
+| Longitude | LONGITUDE | double | positive or negative number | The estimated longitude of the tree's location. |
+| GIS Coordinates | GEOJSON_COORDINATES | GEOJSON | longitude, latitude pair | Coordinates field with latitude and longitude values switches for ease of GIS mapping. |
 ## Metadata
 **WASHINGTON D.C.**
 | Attribute | Value         |
